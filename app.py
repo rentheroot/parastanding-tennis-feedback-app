@@ -48,12 +48,7 @@ TENNIS_SCENARIOS = {
         'enabled_parts': ['NOSE', 'RIGHT_SHOULDER', 'RIGHT_ELBOW', 'RIGHT_WRIST',
                          'LEFT_HIP', 'RIGHT_HIP', 'LEFT_KNEE', 'RIGHT_KNEE']
     },
-    'wheelchair': {
-        'name': 'Wheelchair Player',
-        'description': 'Upper body focus - no leg tracking',
-        'enabled_parts': ['NOSE', 'LEFT_SHOULDER', 'RIGHT_SHOULDER', 'LEFT_ELBOW', 
-                         'RIGHT_ELBOW', 'LEFT_WRIST', 'RIGHT_WRIST']
-    },
+    
     'balance_training': {
         'name': 'Balance Training',
         'description': 'Full body with emphasis on stability',
@@ -287,7 +282,7 @@ def monitor():
     global current_profile
     if current_profile is None:
         return "No profile selected. Please create or select a profile first.", 400
-    return render_template('monitor.html', profile=current_profile)
+    return render_template('monitor2.html', profile=current_profile)
 
 @app.route('/video_feed')
 def video_feed():

@@ -19,8 +19,8 @@ WINDOW_LEN = 1.0           # seconds used to aggregate features (should match tr
 SAMPLE_INTERVAL = 0.1      # seconds between evaluations (0.1 -> 10Hz)
 MOVING_AVG_WINDOW = 5      # how many recent probs to average for smoothing
 PROB_THRESHOLD = 0.30      # moving-average probability threshold to consider a positive
-CONSEC_POS_N = 1           # consecutive moving-avg positives to START clip
-CONSEC_NEG_N = 3           # consecutive moving-avg negatives to STOP clip
+CONSEC_POS_N = 2           # consecutive moving-avg positives to START clip
+CONSEC_NEG_N = 5           # consecutive moving-avg negatives to STOP clip
 SAVE_CLIP_VIDEO_FPS = 20   # fps of saved clip video
 CLIP_DIR = "clips/detected/"
 ANNOTATED_DIR = os.path.join(CLIP_DIR, "annotated")
@@ -153,11 +153,30 @@ class VideoFeed:
         self.record_frames_raw = []
         self.record_frames_annot = []
         self.record_pose_rows = []
+        # control flag for running the main loop
+        self.running = False
 
     def start_feed(self, cam_index=0):
         self.cap = cv2.VideoCapture(cam_index)
         if not self.cap.isOpened():
             raise RuntimeError("Could not open camera.")
+        # mark running when feed started
+        self.running = True
+
+    def stop(self):
+        """Stop the detector loop and release resources."""
+        try:
+            self.running = False
+            if hasattr(self, 'cap') and self.cap is not None and self.cap.isOpened():
+                try:
+                    self.cap.release()
+                except Exception:
+                    pass
+        finally:
+            try:
+                self.db_writer.stop()
+            except Exception:
+                pass
 
     def _prune_old_buffers(self):
         cutoff = time.time() - self.max_buffer_seconds
@@ -289,7 +308,7 @@ class VideoFeed:
             consecutive_neg = 0
             landmarks_checked = False
 
-            while self.cap.isOpened():
+            while self.cap.isOpened() and self.running:
                 ret, frame = self.cap.read()
                 if not ret:
                     break

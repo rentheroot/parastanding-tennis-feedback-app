@@ -5,6 +5,8 @@ venv/
 env/
 *.db
 *.mp4
+*.avi
+*.sqlite
 # Byte-compiled / caches
 __pycache__/
 *.py[cod]
