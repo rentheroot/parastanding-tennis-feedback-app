@@ -1,3 +1,53 @@
+# Python virtual environments
+tennis_env/
+tennis_env_py311/
+venv/
+env/
+
+# Byte-compiled / caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+pip-wheel-metadata/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Pytest
+.pytest_cache/
+
+# IDEs and editors
+.vscode/
+.idea/
+.DS_Store
+
+# Local env files
+.env
+*.env
+
+# Mac files
+.DS_Store
+
+# Coverage
+.coverage
+coverage.xml
+
+# Logs
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
+
+# C extensions
+*.so
+
+# Ignore user profiles directory (optional - remove if you want to keep profiles in repo)
+# user_profiles/
 technica2025.code-workspace
 .vscode
-*.db

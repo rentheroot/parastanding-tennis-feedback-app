@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tennis Training Monitor - {{ profile.username }}</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #f97316;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --bg-color: #1f2937;
+            --card-bg: #374151;
+            --text-color: #f9fafb;
+            --border-color: #4b5563;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        .header {
+            background: var(--card-bg);
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .back-btn {
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .back-btn:hover {
+            background: #ea580c;
+        }
+
+        .user-info {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .header-right {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .status-online {
+            background: var(--success-color);
+            color: white;
+        }
+
+        .status-offline {
+            background: var(--danger-color);
+            color: white;
+        }
+
+        .main-container {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            height: calc(100vh - 70px);
+        }
+
+        .video-section {
+            background: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .video-feed {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 8px;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 8px;
+            color: white;
+        }
+
+        .overlay-item {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .sidebar {
+            background: var(--card-bg);
+            padding: 20px;
+            border-left: 1px solid var(--border-color);
+            overflow-y: auto;
+        }
+
+        .stats-card {
+            background: var(--bg-color);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .stat-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #9ca3af;
+        }
+
+        .stat-value {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--success-color);
+        }
+
+        .stroke-counter {
+            font-size: 36px !important;
+            color: var(--secondary-color);
+        }
+
+        .body-parts-list {
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .body-part-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+
+        .part-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--success-color);
+        }
+
+        .part-disabled {
+            background: #6b7280;
+        }
+
+        .control-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-danger {
+            background: var(--danger-color);
+            color: white;
+        }
+
+        .btn-success {
+            background: var(--success-color);
+            color: white;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .timer {
+            font-family: 'Courier New', monospace;
+            font-size: 20px;
+            color: var(--warning-color);
+        }
+
+        .recommendations {
+            background: var(--bg-color);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary-color);
+            margin-top: 20px;
+        }
+
+        .recommendations h4 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .recommendation-item {
+            font-size: 13px;
+            margin-bottom: 8px;
+            color: #d1d5db;
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-left">
+            <a href="/" class="back-btn">← Back</a>
+            <div class="user-info">🎾 {{ profile.username }}</div>
+        </div>
+        <div class="header-right">
+            <div class="status-indicator status-online pulse">
+                <span>●</span> Camera Active
+            </div>
+            <div class="status-indicator status-offline" id="arduinoStatus">
+                <span>●</span> Arduino Disconnected
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="video-section">
+            <img src="{{ url_for('video_feed') }}" class="video-feed" alt="Tennis Training Feed">
+            
+            <div class="video-overlay">
+                <div class="overlay-item"><strong>Live Pose Tracking</strong></div>
+                <div class="overlay-item">Forehand Detection: Active</div>
+                <div class="overlay-item">Frame Rate: <span id="fps">30</span> FPS</div>
+                <div class="overlay-item">Resolution: 640x480</div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <div class="stats-card">
+                <div class="card-title">📊 Session Statistics</div>
+                <div class="stat-item">
+                    <span class="stat-label">Stroke Count</span>
+                    <span class="stat-value stroke-counter" id="strokeCount">{{ profile.stroke_count }}</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Session Time</span>
+                    <span class="stat-value timer" id="sessionTimer">00:00:00</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Avg. Strokes/Min</span>
+                    <span class="stat-value" id="strokeRate">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Good Form %</span>
+                    <span class="stat-value" id="formAccuracy">--</span>
+                </div>
+            </div>
+
+            <div class="stats-card">
+                <div class="card-title">🎯 Active Body Parts</div>
+                <div class="body-parts-list">
+                    {% for part_name, enabled in profile.body_parts.items() %}
+                    <div class="body-part-item">
+                        <div class="part-indicator {{ 'part-disabled' if enabled == 0 else '' }}"></div>
+                        <span>{{ part_name.replace('_', ' ').title() }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="stats-card">
+                <div class="card-title">🔧 Controls</div>
+                <div class="control-buttons">
+                    <button class="btn btn-success" onclick="simulateStroke()">Test Stroke</button>
+                    <button class="btn btn-primary" onclick="resetSession()">Reset Session</button>
+                    <button class="btn btn-danger" onclick="stopTraining()">Stop Training</button>
+                    <button class="btn btn-primary" onclick="togglePause()">Pause/Resume</button>
+                </div>
+            </div>
+
+            <div class="recommendations">
+                <h4>🤖 AI Recommendations</h4>
+                <div class="recommendation-item" id="recommendation1">• Keep your elbow high during backswing</div>
+                <div class="recommendation-item" id="recommendation2">• Follow through across your body</div>
+                <div class="recommendation-item" id="recommendation3">• Maintain balance on both feet</div>
+                <div class="recommendation-item" id="recommendation4">• Ready for ML model integration...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let sessionStartTime = Date.now();
+        let strokeCount = {{ profile.stroke_count }};
+        let isPaused = false;
+
+        // Update session timer
+        function updateTimer() {
+            if (!isPaused) {
+                const elapsed = Date.now() - sessionStartTime;
+                const hours = Math.floor(elapsed / 3600000);
+                const minutes = Math.floor((elapsed % 3600000) / 60000);
+                const seconds = Math.floor((elapsed % 60000) / 1000);
+                
+                document.getElementById('sessionTimer').textContent = 
+                    `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                
+                // Update stroke rate
+                const totalMinutes = elapsed / 60000;
+                const rate = totalMinutes > 0 ? Math.round(strokeCount / totalMinutes) : 0;
+                document.getElementById('strokeRate').textContent = rate;
+            }
+        }
+
+        // Simulate Arduino stroke detection
+        function simulateStroke() {
+            fetch('/api/stroke/increment', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    strokeCount = data.count;
+                    document.getElementById('strokeCount').textContent = strokeCount;
+                    
+                    // Flash effect
+                    const counter = document.getElementById('strokeCount');
+                    counter.style.color = '#10b981';
+                    setTimeout(() => {
+                        counter.style.color = '#f97316';
+                    }, 200);
+                }
+            });
+        }
+
+        function resetSession() {
+            if (confirm('Reset session statistics?')) {
+                sessionStartTime = Date.now();
+                strokeCount = 0;
+                document.getElementById('strokeCount').textContent = '0';
+                document.getElementById('sessionTimer').textContent = '00:00:00';
+                document.getElementById('strokeRate').textContent = '0';
+            }
+        }
+
+        function stopTraining() {
+            if (confirm('Stop training session?')) {
+                window.location.href = '/stop';
+            }
+        }
+
+        function togglePause() {
+            isPaused = !isPaused;
+            const btn = event.target;
+            btn.textContent = isPaused ? 'Resume' : 'Pause';
+            btn.className = isPaused ? 'btn btn-success' : 'btn btn-primary';
+        }
+
+        // Simulate Arduino connection check
+        function checkArduinoConnection() {
+            // This would normally check actual Arduino connection
+            const status = document.getElementById('arduinoStatus');
+            const isConnected = Math.random() > 0.7; // Simulate connection
+            
+            if (isConnected) {
+                status.className = 'status-indicator status-online';
+                status.innerHTML = '<span>●</span> Arduino Connected';
+            } else {
+                status.className = 'status-indicator status-offline';
+                status.innerHTML = '<span>●</span> Arduino Disconnected';
+            }
+        }
+
+        // Update recommendations periodically
+        function updateRecommendations() {
+            const recommendations = [
+                "• Keep your elbow high during backswing",
+                "• Follow through across your body", 
+                "• Maintain balance on both feet",
+                "• Rotate your shoulders with the swing",
+                "• Keep your eye on the ball contact point",
+                "• Step into the shot for more power",
+                "• Finish with racket over opposite shoulder"
+            ];
+            
+            const randomRec = recommendations[Math.floor(Math.random() * recommendations.length)];
+            document.getElementById('recommendation1').textContent = randomRec;
+        }
+
+        // Start timers and updates
+        setInterval(updateTimer, 1000);
+        setInterval(checkArduinoConnection, 3000);
+        setInterval(updateRecommendations, 10000);
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            switch(e.key) {
+                case ' ': // Spacebar for stroke
+                    e.preventDefault();
+                    simulateStroke();
+                    break;
+                case 'p': // P for pause
+                    togglePause();
+                    break;
+                case 'r': // R for reset
+                    resetSession();
+                    break;
+                case 'Escape': // Escape to stop
+                    stopTraining();
+                    break;
+            }
+        });
+
+        // Show keyboard shortcuts on load
+        setTimeout(() => {
+            console.log('Keyboard Shortcuts:');
+            console.log('Spacebar: Record stroke');
+            console.log('P: Pause/Resume');
+            console.log('R: Reset session');
+            console.log('Escape: Stop training');
+        }, 1000);
+    </script>
+</body>
+</html>
