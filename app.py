@@ -1,12 +1,14 @@
 from flask import Flask, render_template, Response, request, jsonify
 import cv2
+import threading
+import time
 # import mediapipe as mp
 import pickle
 import os
 from datetime import datetime
 import json
 from config import POSE_LANDMARKS, APP_CONFIG, DEFAULT_PROFILE, ACCESSIBILITY_PRESETS
-
+import main2
 app = Flask(__name__)
 
 # Initialize MediaPipe Pose
@@ -234,30 +236,42 @@ def get_all_profiles():
 def generate_frames():
     """Generate frames for video streaming with simple camera feed"""
     global camera, current_profile
-    
-    if camera is None:
-        camera = cv2.VideoCapture(0)
-    
+    # Start detector feed in background and stream annotated frames
+    vf = main2.VideoFeed()
+    vf.start_feed(cam_index=0)
+
+    # run the detection loop in a daemon thread (headless)
+    t = threading.Thread(target=vf.trace_body_pos, args=(True,), daemon=True)
+    t.start()
+
+    # stream latest annotated frame from the detector's buffer
     while True:
-        success, frame = camera.read()
-        if not success:
+        try:
+            if vf.frame_buffer_annot:
+                ts, frame = vf.frame_buffer_annot[-1]
+                # overlay current profile info if available
+                if current_profile:
+                    cv2.putText(frame, f"User: {current_profile['username']}",
+                               (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
+                    cv2.putText(frame, f"Strokes: {current_profile['stroke_count']}",
+                               (10, 60), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
+
+                ret, buffer = cv2.imencode('.jpg', frame)
+                if not ret:
+                    time.sleep(0.01)
+                    continue
+                frame_bytes = buffer.tobytes()
+                yield (b'--frame\r\n'
+                       b'Content-Type: image/jpeg\r\n\r\n' + frame_bytes + b'\r\n')
+            else:
+                # no frame yet, wait briefly
+                time.sleep(0.01)
+                continue
+        except GeneratorExit:
             break
-        
-        # Simple camera feed without pose detection for now
-        if current_profile:
-            cv2.putText(frame, f"User: {current_profile['username']}", 
-                       (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
-            cv2.putText(frame, f"Strokes: {current_profile['stroke_count']}", 
-                       (10, 60), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
-            cv2.putText(frame, "Tennis Coach Active - Frontend Ready!", 
-                       (10, 90), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 0), 1)
-        
-        # Encode frame
-        ret, buffer = cv2.imencode('.jpg', frame)
-        frame_bytes = buffer.tobytes()
-        
-        yield (b'--frame\r\n'
-               b'Content-Type: image/jpeg\r\n\r\n' + frame_bytes + b'\r\n')
+        except Exception:
+            time.sleep(0.01)
+            continue
 
 @app.route('/')
 def index():

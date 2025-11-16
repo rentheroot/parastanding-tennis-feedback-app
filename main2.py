@@ -1,17 +1,3 @@
-# main_with_detector_no_wrist.py
-"""
-Full live detection pipeline (no wrist-speed fallback).
-
-- Loads model_pipeline.pkl and model_meta.json
-- Uses moving-average of recent probabilities to make decisions
-- Uses CONSEC_POS_N consecutive moving-avg positives to START clip
-- Uses CONSEC_NEG_N consecutive moving-avg negatives to STOP clip
-- Saves annotated + raw video clips and a sqlite DB with pose rows for each clip
-- No wrist-speed heuristics or fallback logic anywhere
-
-Adjust top-level variables as needed (no argparse).
-"""
-
 import os
 import time
 import json
@@ -135,7 +121,7 @@ class SQLManager:
             print("Failed to open database:", e)
 
 # ---------------- main video feed with detector (no wrist fallback) ----------------
-class VideoFeedNoWrist:
+class VideoFeed:
     def __init__(self):
         self.mp_drawing = mp.solutions.drawing_utils
         self.mp_holistic = mp.solutions.holistic
@@ -283,10 +269,17 @@ class VideoFeedNoWrist:
         self.record_pose_rows = []
         self.record_start_ts = None
 
-    def trace_body_pos(self):
-        # fullscreen window (same as previous)
-        cv2.namedWindow('Tennis Tracer', cv2.WND_PROP_FULLSCREEN)
-        cv2.setWindowProperty('Tennis Tracer', cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
+    def trace_body_pos(self, headless=False):
+        """Main detection loop.
+
+        If `headless=True` the function will skip creating OpenCV windows and
+        will not call `cv2.imshow`/`waitKey`. This allows running the detector
+        in a background thread while a web server (Flask) streams frames.
+        """
+        # create window only when not running headless
+        if not headless:
+            cv2.namedWindow('Tennis Tracer', cv2.WND_PROP_FULLSCREEN)
+            cv2.setWindowProperty('Tennis Tracer', cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
 
         with self.mp_holistic.Holistic(min_detection_confidence=0.5,
                                        min_tracking_confidence=0.5) as holistic:
@@ -402,18 +395,14 @@ class VideoFeedNoWrist:
                             consecutive_pos = 0
                             consecutive_neg = 0
 
-                # show annotated frame
-                cv2.imshow('Tennis Tracer', annotated)
-                if cv2.waitKey(1) & 0xFF == ord('q'):
-                    break
+                # show annotated frame (only when not headless)
+                if not headless:
+                    cv2.imshow('Tennis Tracer', annotated)
+                    if cv2.waitKey(1) & 0xFF == ord('q'):
+                        break
 
         # cleanup
         self.cap.release()
-        cv2.destroyAllWindows()
+        if not headless:
+            cv2.destroyAllWindows()
         self.db_writer.stop()
-
-# ---------------- run ----------------
-if __name__ == "__main__":
-    vf = VideoFeedNoWrist()
-    vf.start_feed(cam_index=0)
-    vf.trace_body_pos()
