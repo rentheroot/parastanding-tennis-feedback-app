@@ -1,0 +1,1340 @@
+[
+    {
+        "id": 1,
+        "annotations": [
+            {
+                "id": 1,
+                "completed_by": 1,
+                "result": [
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 1,
+                                    "end": 238
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Not"
+                            ]
+                        },
+                        "id": "agzGDwUKhS",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 238,
+                                    "end": 278
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Swinging"
+                            ]
+                        },
+                        "id": "GqoLtehkZj",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 278,
+                                    "end": 371
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Not"
+                            ]
+                        },
+                        "id": "CCll6eU3oY",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 371,
+                                    "end": 424
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Swinging"
+                            ]
+                        },
+                        "id": "Hkbd5H9Fm7",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 424,
+                                    "end": 523
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Not"
+                            ]
+                        },
+                        "id": "c0IZpogtLc",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 523,
+                                    "end": 569
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Swinging"
+                            ]
+                        },
+                        "id": "C-kq_HthWo",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 569,
+                                    "end": 691
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Not"
+                            ]
+                        },
+                        "id": "ElKfxAXyKG",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 691,
+                                    "end": 741
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Swinging"
+                            ]
+                        },
+                        "id": "ZyFs5KoC4X",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 741,
+                                    "end": 859
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Not"
+                            ]
+                        },
+                        "id": "ovjLqRMfHI",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 859,
+                                    "end": 915
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Swinging"
+                            ]
+                        },
+                        "id": "gkR7NmqSar",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 915,
+                                    "end": 1025
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Not"
+                            ]
+                        },
+                        "id": "49JeBM3K4u",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 1025,
+                                    "end": 1074
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Swinging"
+                            ]
+                        },
+                        "id": "wNFlrwsdLd",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 1074,
+                                    "end": 1194
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Not"
+                            ]
+                        },
+                        "id": "FixOskJ1ja",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 1194,
+                                    "end": 1246
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Swinging"
+                            ]
+                        },
+                        "id": "c9ZqWz0KE5",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 1246,
+                                    "end": 1613
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Not"
+                            ]
+                        },
+                        "id": "PczfR42IVe",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    }
+                ],
+                "was_cancelled": false,
+                "ground_truth": false,
+                "created_at": "2025-11-16T03:17:37.807569Z",
+                "updated_at": "2025-11-16T03:49:02.663979Z",
+                "draft_created_at": "2025-11-16T03:17:25.124601Z",
+                "lead_time": 1438.39,
+                "prediction": {},
+                "result_count": 15,
+                "unique_id": "8d8ab6ab-86bc-4b5f-af57-cde294242e64",
+                "import_id": null,
+                "last_action": null,
+                "bulk_created": false,
+                "task": 1,
+                "project": 1,
+                "updated_by": 1,
+                "parent_prediction": null,
+                "parent_annotation": null,
+                "last_created_by": null
+            }
+        ],
+        "file_upload": "video4.mp4",
+        "drafts": [],
+        "predictions": [],
+        "data": {
+            "video": "video4.mp4"
+        },
+        "meta": {},
+        "created_at": "2025-11-16T02:29:56.064166Z",
+        "updated_at": "2025-11-16T03:49:02.764647Z",
+        "inner_id": 1,
+        "total_annotations": 1,
+        "cancelled_annotations": 0,
+        "total_predictions": 0,
+        "comment_count": 0,
+        "unresolved_comment_count": 0,
+        "last_comment_updated_at": null,
+        "project": 1,
+        "updated_by": 1,
+        "comment_authors": []
+    },
+    {
+        "id": 3,
+        "annotations": [
+            {
+                "id": 2,
+                "completed_by": 1,
+                "result": [
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 1,
+                                    "end": 298
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Not"
+                            ]
+                        },
+                        "id": "BFDj4Of7Q9",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 298,
+                                    "end": 351
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Swinging"
+                            ]
+                        },
+                        "id": "SWlaSVLLnO",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 351,
+                                    "end": 444
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Not"
+                            ]
+                        },
+                        "id": "nVZxAiGjLC",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 444,
+                                    "end": 499
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Swinging"
+                            ]
+                        },
+                        "id": "DoYkfKplb_",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 499,
+                                    "end": 600
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Not"
+                            ]
+                        },
+                        "id": "1jfRZV7mpN",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 600,
+                                    "end": 652
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Swinging"
+                            ]
+                        },
+                        "id": "AveU49lw5-",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 652,
+                                    "end": 749
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Not"
+                            ]
+                        },
+                        "id": "b8lvZL3WIp",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 749,
+                                    "end": 805
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Swinging"
+                            ]
+                        },
+                        "id": "gjritn0ZuD",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 805,
+                                    "end": 926
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Not"
+                            ]
+                        },
+                        "id": "P0p9-Sf_nd",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 926,
+                                    "end": 985
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Swinging"
+                            ]
+                        },
+                        "id": "MteKzxZNq8",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 985,
+                                    "end": 1090
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Not"
+                            ]
+                        },
+                        "id": "3t4NPhEgh6",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 1090,
+                                    "end": 1144
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Swinging"
+                            ]
+                        },
+                        "id": "TC-CcihreS",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 1144,
+                                    "end": 1307
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Not"
+                            ]
+                        },
+                        "id": "i5NZVhExqB",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 1307,
+                                    "end": 1367
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Swinging"
+                            ]
+                        },
+                        "id": "U78poyz9aU",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 1367,
+                                    "end": 1433
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Not"
+                            ]
+                        },
+                        "id": "WrlMbmJaki",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    }
+                ],
+                "was_cancelled": false,
+                "ground_truth": false,
+                "created_at": "2025-11-16T04:07:48.177285Z",
+                "updated_at": "2025-11-16T04:07:48.177285Z",
+                "draft_created_at": "2025-11-16T03:59:47.612434Z",
+                "lead_time": 499.521,
+                "prediction": {},
+                "result_count": 15,
+                "unique_id": "4f7167b6-21a0-428b-a81e-7d6a92925890",
+                "import_id": null,
+                "last_action": null,
+                "bulk_created": false,
+                "task": 3,
+                "project": 1,
+                "updated_by": 1,
+                "parent_prediction": null,
+                "parent_annotation": null,
+                "last_created_by": null
+            }
+        ],
+        "file_upload": "video2.mp4",
+        "drafts": [],
+        "predictions": [],
+        "data": {
+            "video": "video2.mp4"
+        },
+        "meta": {},
+        "created_at": "2025-11-16T03:59:22.611725Z",
+        "updated_at": "2025-11-16T04:07:48.245285Z",
+        "inner_id": 2,
+        "total_annotations": 1,
+        "cancelled_annotations": 0,
+        "total_predictions": 0,
+        "comment_count": 0,
+        "unresolved_comment_count": 0,
+        "last_comment_updated_at": null,
+        "project": 1,
+        "updated_by": 1,
+        "comment_authors": []
+    },
+    {
+        "id": 4,
+        "annotations": [
+            {
+                "id": 3,
+                "completed_by": 1,
+                "result": [
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 1,
+                                    "end": 109
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Not"
+                            ]
+                        },
+                        "id": "A2ZuEPqmEa",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 109,
+                                    "end": 151
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Swinging"
+                            ]
+                        },
+                        "id": "vEFfxrmGYS",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 151,
+                                    "end": 1508
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Not"
+                            ]
+                        },
+                        "id": "vegWbd3_Bv",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 1508,
+                                    "end": 1558
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Swinging"
+                            ]
+                        },
+                        "id": "daUXu8o6_G",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 1558,
+                                    "end": 2069
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Not"
+                            ]
+                        },
+                        "id": "SONiqfWiNx",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    }
+                ],
+                "was_cancelled": false,
+                "ground_truth": false,
+                "created_at": "2025-11-16T04:12:20.384648Z",
+                "updated_at": "2025-11-16T04:12:20.384648Z",
+                "draft_created_at": "2025-11-16T04:08:50.605152Z",
+                "lead_time": 223.603,
+                "prediction": {},
+                "result_count": 5,
+                "unique_id": "5924e0bc-f4f1-46f7-86e8-24377375ecb1",
+                "import_id": null,
+                "last_action": null,
+                "bulk_created": false,
+                "task": 4,
+                "project": 1,
+                "updated_by": 1,
+                "parent_prediction": null,
+                "parent_annotation": null,
+                "last_created_by": null
+            }
+        ],
+        "file_upload": "video3.mp4",
+        "drafts": [],
+        "predictions": [],
+        "data": {
+            "video": "video3.mp4"
+        },
+        "meta": {},
+        "created_at": "2025-11-16T04:08:13.493678Z",
+        "updated_at": "2025-11-16T04:12:20.450644Z",
+        "inner_id": 3,
+        "total_annotations": 1,
+        "cancelled_annotations": 0,
+        "total_predictions": 0,
+        "comment_count": 0,
+        "unresolved_comment_count": 0,
+        "last_comment_updated_at": null,
+        "project": 1,
+        "updated_by": 1,
+        "comment_authors": []
+    },
+    {
+        "id": 5,
+        "annotations": [
+            {
+                "id": 4,
+                "completed_by": 1,
+                "result": [
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 1,
+                                    "end": 532
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Not"
+                            ]
+                        },
+                        "id": "MlN05nzfgw",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 532,
+                                    "end": 583
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Swinging"
+                            ]
+                        },
+                        "id": "LeYsiuWk8T",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 583,
+                                    "end": 713
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Not"
+                            ]
+                        },
+                        "id": "MdPjAL2_FW",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 713,
+                                    "end": 769
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Swinging"
+                            ]
+                        },
+                        "id": "J0ikQU67W4",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 769,
+                                    "end": 878
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Not"
+                            ]
+                        },
+                        "id": "SR9Z4b-sYR",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 878,
+                                    "end": 927
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Swinging"
+                            ]
+                        },
+                        "id": "kgbChi2lvU",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 927,
+                                    "end": 1032
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Not"
+                            ]
+                        },
+                        "id": "A_tZcn5m4V",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 1032,
+                                    "end": 1081
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Swinging"
+                            ]
+                        },
+                        "id": "EEPvg6W8k9",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 1081,
+                                    "end": 1212
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Not"
+                            ]
+                        },
+                        "id": "UG-QvsbrSz",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 1212,
+                                    "end": 1263
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Swinging"
+                            ]
+                        },
+                        "id": "6WV04VUuxF",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 1263,
+                                    "end": 1390
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Not"
+                            ]
+                        },
+                        "id": "VT8LWAExYh",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 1390,
+                                    "end": 1456
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Swinging"
+                            ]
+                        },
+                        "id": "xcm5t4_x50",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 1456,
+                                    "end": 1487
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Not"
+                            ]
+                        },
+                        "id": "G5DeBfXqFl",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    }
+                ],
+                "was_cancelled": false,
+                "ground_truth": false,
+                "created_at": "2025-11-16T06:11:34.606628Z",
+                "updated_at": "2025-11-16T06:11:34.606628Z",
+                "draft_created_at": "2025-11-16T06:04:14.739866Z",
+                "lead_time": 452.228,
+                "prediction": {},
+                "result_count": 13,
+                "unique_id": "52cc5907-d0e4-4783-8606-7633a2e999f8",
+                "import_id": null,
+                "last_action": null,
+                "bulk_created": false,
+                "task": 5,
+                "project": 1,
+                "updated_by": 1,
+                "parent_prediction": null,
+                "parent_annotation": null,
+                "last_created_by": null
+            }
+        ],
+        "file_upload": "video5.mp4",
+        "drafts": [],
+        "predictions": [],
+        "data": {
+            "video": "video5.mp4"
+        },
+        "meta": {},
+        "created_at": "2025-11-16T06:03:44.021430Z",
+        "updated_at": "2025-11-16T06:11:34.680142Z",
+        "inner_id": 4,
+        "total_annotations": 1,
+        "cancelled_annotations": 0,
+        "total_predictions": 0,
+        "comment_count": 0,
+        "unresolved_comment_count": 0,
+        "last_comment_updated_at": null,
+        "project": 1,
+        "updated_by": 1,
+        "comment_authors": []
+    },
+    {
+        "id": 6,
+        "annotations": [
+            {
+                "id": 5,
+                "completed_by": 1,
+                "result": [
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 1,
+                                    "end": 114
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Not"
+                            ]
+                        },
+                        "id": "a_yfwiP-wP",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 114,
+                                    "end": 163
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Swinging"
+                            ]
+                        },
+                        "id": "W9SlULofG3",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 163,
+                                    "end": 319
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Not"
+                            ]
+                        },
+                        "id": "zqGrLrvnJB",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 319,
+                                    "end": 363
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Swinging"
+                            ]
+                        },
+                        "id": "AFTMtmZQZc",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 363,
+                                    "end": 495
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Not"
+                            ]
+                        },
+                        "id": "IM3DDPhSkS",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 495,
+                                    "end": 536
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Swinging"
+                            ]
+                        },
+                        "id": "ma6mBGAvpf",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 536,
+                                    "end": 676
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Not"
+                            ]
+                        },
+                        "id": "xjX7TJIjNE",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 676,
+                                    "end": 723
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Swinging"
+                            ]
+                        },
+                        "id": "kEMpN737x1",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 723,
+                                    "end": 851
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Not"
+                            ]
+                        },
+                        "id": "n5TJJ014Fl",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 851,
+                                    "end": 905
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Swinging"
+                            ]
+                        },
+                        "id": "HL7NhPr5h9",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 905,
+                                    "end": 1038
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Not"
+                            ]
+                        },
+                        "id": "uF0ipaYHtb",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 1038,
+                                    "end": 1079
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Swinging"
+                            ]
+                        },
+                        "id": "4CjjI1-c3_",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    },
+                    {
+                        "value": {
+                            "ranges": [
+                                {
+                                    "start": 1079,
+                                    "end": 1452
+                                }
+                            ],
+                            "timelinelabels": [
+                                "Not"
+                            ]
+                        },
+                        "id": "8SlYCwMDrh",
+                        "from_name": "videoLabels",
+                        "to_name": "video",
+                        "type": "timelinelabels",
+                        "origin": "manual"
+                    }
+                ],
+                "was_cancelled": false,
+                "ground_truth": false,
+                "created_at": "2025-11-16T07:56:24.629985Z",
+                "updated_at": "2025-11-16T08:04:31.564547Z",
+                "draft_created_at": "2025-11-16T07:53:26.160013Z",
+                "lead_time": 675.9889999999999,
+                "prediction": {},
+                "result_count": 13,
+                "unique_id": "b8067efa-53ff-45aa-9b30-d231071e7001",
+                "import_id": null,
+                "last_action": null,
+                "bulk_created": false,
+                "task": 6,
+                "project": 1,
+                "updated_by": 1,
+                "parent_prediction": null,
+                "parent_annotation": null,
+                "last_created_by": null
+            }
+        ],
+        "file_upload": "video6.mp4",
+        "drafts": [],
+        "predictions": [],
+        "data": {
+            "video": "video6.mp4"
+        },
+        "meta": {},
+        "created_at": "2025-11-16T06:03:56.531478Z",
+        "updated_at": "2025-11-16T08:04:31.663320Z",
+        "inner_id": 5,
+        "total_annotations": 1,
+        "cancelled_annotations": 0,
+        "total_predictions": 0,
+        "comment_count": 0,
+        "unresolved_comment_count": 0,
+        "last_comment_updated_at": null,
+        "project": 1,
+        "updated_by": 1,
+        "comment_authors": []
+    }
+]

@@ -3,7 +3,8 @@ tennis_env/
 tennis_env_py311/
 venv/
 env/
-
+*.db
+*.mp4
 # Byte-compiled / caches
 __pycache__/
 *.py[cod]
