@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parastanding Tennis Coach</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #f97316;
+            --success-color: #10b981;
+            --bg-color: #1f2937;
+            --card-bg: #374151;
+            --text-color: #f9fafb;
+            --border-color: #4b5563;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #9ca3af;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .profile-section {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-size: 16px;
+        }
+
+        .presets {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .preset-btn {
+            padding: 10px;
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+
+        .preset-btn:hover {
+            background: #ea580c;
+        }
+
+        .body-parts {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .body-category {
+            background: var(--bg-color);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .category-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+        }
+
+        .checkbox-group label {
+            margin: 0;
+            cursor: pointer;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+        }
+
+        .btn-success {
+            background: var(--success-color);
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #059669;
+        }
+
+        .sidebar {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            height: fit-content;
+        }
+
+        .profile-list {
+            list-style: none;
+        }
+
+        .profile-item {
+            background: var(--bg-color);
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .profile-item:hover {
+            border-color: var(--primary-color);
+            background: #1f2937;
+        }
+
+        .profile-item.selected {
+            border-color: var(--success-color);
+            background: rgba(16,185,129,0.08);
+            box-shadow: 0 0 0 3px rgba(16,185,129,0.06);
+        }
+
+        .profile-info {
+            cursor: pointer;
+            flex: 1;
+        }
+
+        .profile-controls {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn-delete {
+            background: transparent;
+            border: 1px solid var(--danger-color);
+            color: var(--danger-color);
+            padding: 4px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.3s;
+        }
+
+        .btn-delete:hover {
+            background: var(--danger-color);
+            color: white;
+        }
+
+        .profile-name {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .profile-meta {
+            font-size: 12px;
+            color: #9ca3af;
+            margin-top: 5px;
+        }
+
+        .profile-controls {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .btn-delete {
+            background: transparent;
+            border: 1px solid #ef4444;
+            color: #fecaca;
+            padding: 6px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .btn-delete:hover {
+            background: #ef4444;
+            color: white;
+        }
+
+        .status-message {
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .status-success {
+            background: #065f46;
+            color: #d1fae5;
+            border: 1px solid #10b981;
+        }
+
+        .status-error {
+            background: #7f1d1d;
+            color: #fecaca;
+            border: 1px solid #ef4444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎾 Parastanding Tennis Coach</h1>
+            <p>Inclusive Tennis Training with AI-Powered Pose Analysis</p>
+        </div>
+
+        <div id="statusMessage" class="status-message"></div>
+
+        <div class="main-content">
+            <div class="profile-section">
+                <h2 class="section-title">Create User Profile</h2>
+                
+                <div class="form-group">
+                    <label for="username">Player Name:</label>
+                    <input type="text" id="username" placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Amputation Presets:</label>
+                    <div class="presets">
+                        <button class="preset-btn" onclick="applyPreset('left_above_elbow_amputee')">Left Transhumeral</button>
+                        <button class="preset-btn" onclick="applyPreset('right_above_elbow_amputee')">Right Transhumeral</button>
+                        <button class="preset-btn" onclick="applyPreset('left_below_elbow_amputee')">Left Transradial</button>
+                        <button class="preset-btn" onclick="applyPreset('right_below_elbow_amputee')">Right Transradial</button>
+                    </div>
+                    <div class="presets">
+                        <button class="preset-btn" onclick="applyPreset('left_above_knee_amputee')">Left Transfemoral</button>
+                        <button class="preset-btn" onclick="applyPreset('right_above_knee_amputee')">Right Transfemoral</button>
+                        <button class="preset-btn" onclick="applyPreset('left_below_knee_amputee')">Left Transtibial</button>
+                        <button class="preset-btn" onclick="applyPreset('right_below_knee_amputee')">Right Transtibial</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>General Presets:</label>
+                    <div class="presets">
+                        <button class="preset-btn" onclick="applyPreset('wheelchair_player')">Wheelchair Player</button>
+                        <button class="preset-btn" onclick="applyPreset('full_body')">Full Body</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Body Parts to Track:</label>
+                    <div class="body-parts">
+                        {% for category, parts in body_parts.items() %}
+                        <div class="body-category">
+                            <div class="category-title">{{ category.replace('_', ' ').title() }}</div>
+                            {% for part_name, landmark_id in parts.items() %}
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="{{ part_name }}" name="body_parts" value="{{ part_name }}" checked>
+                                <label for="{{ part_name }}">{{ part_name.replace('_', ' ').title() }}</label>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-primary" onclick="createProfile()">Create Profile</button>
+                    <button id="startBtn" class="btn btn-success" onclick="startMonitoring()" disabled>Start Training →</button>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <h3 class="section-title">Saved Profiles</h3>
+                <ul class="profile-list" id="profileList">
+                    {% for profile in profiles %}
+                    <li class="profile-item" data-username="{{ profile.username }}">
+                        <div class="profile-info" onclick="loadProfile('{{ profile.username }}')" style="flex:1">
+                            <div class="profile-name">{{ profile.username }}</div>
+                            <div class="profile-meta">
+                                Strokes: {{ profile.stroke_count }} | 
+                                Created: {{ profile.created_date[:10] }}
+                            </div>
+                        </div>
+                        <div class="profile-controls">
+                            <button class="btn-delete" onclick="deleteProfile('{{ profile.username }}', event)">Delete</button>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showStatus(message, type) {
+            const statusDiv = document.getElementById('statusMessage');
+            statusDiv.textContent = message;
+            statusDiv.className = `status-message status-${type}`;
+            statusDiv.style.display = 'block';
+            setTimeout(() => {
+                statusDiv.style.display = 'none';
+            }, 3000);
+        }
+
+        function applyPreset(presetType) {
+            // Fetch presets from config
+            fetch('/api/presets')
+            .then(response => response.json())
+            .then(data => {
+                const preset = data.presets[presetType];
+                if (preset) {
+                    // Uncheck all first
+                    document.querySelectorAll('input[name="body_parts"]').forEach(cb => cb.checked = false);
+                    
+                    // Enable preset-specific parts
+                    preset.enabled_parts.forEach(part => {
+                        const checkbox = document.getElementById(part);
+                        if (checkbox) checkbox.checked = true;
+                    });
+                    
+                    showStatus(`Applied ${preset.name}`, 'success');
+                } else {
+                    // Fallback for old presets
+                    applyOldPreset(presetType);
+                }
+            })
+            .catch(error => {
+                applyOldPreset(presetType);
+            });
+        }
+
+        function applyOldPreset(presetType) {
+            // Uncheck all checkboxes first
+            document.querySelectorAll('input[name="body_parts"]').forEach(cb => cb.checked = false);
+            
+            switch(presetType) {
+                case 'full_body':
+                    document.querySelectorAll('input[name="body_parts"]').forEach(cb => cb.checked = true);
+                    break;
+            }
+        }
+
+        function getSelectedBodyParts() {
+            const bodyParts = {};
+            document.querySelectorAll('input[name="body_parts"]').forEach(checkbox => {
+                bodyParts[checkbox.value] = checkbox.checked ? 1 : 0;
+            });
+            return bodyParts;
+        }
+
+        function createProfile() {
+            const username = document.getElementById('username').value.trim();
+            if (!username) {
+                showStatus('Please enter a player name', 'error');
+                return;
+            }
+
+            const bodyParts = getSelectedBodyParts();
+            
+            fetch('/api/profile/create', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    username: username,
+                    body_parts: bodyParts
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    showStatus('Profile created successfully!', 'success');
+                    // Add to saved profiles list immediately and select it
+                    addProfileToList(username);
+                    selectProfileInList(username);
+                    document.getElementById('startBtn').disabled = false;
+                } else {
+                    showStatus('Error creating profile', 'error');
+                }
+            })
+            .catch(error => {
+                showStatus('Error creating profile', 'error');
+            });
+        }
+
+        function addProfileToList(username) {
+            const profileList = document.getElementById('profileList');
+            const newProfile = document.createElement('li');
+            newProfile.className = 'profile-item';
+            newProfile.setAttribute('data-username', username);
+            newProfile.innerHTML = `
+                <div class="profile-info" onclick="loadProfile('${username}')" style="flex:1">
+                    <div class="profile-name">${username}</div>
+                    <div class="profile-meta">
+                        Strokes: 0 | Created: ${new Date().toISOString().slice(0, 10)}
+                    </div>
+                </div>
+                <div class="profile-controls">
+                    <button class="btn-delete" onclick="deleteProfile('${username}', event)">Delete</button>
+                </div>
+            `;
+            profileList.appendChild(newProfile);
+            // select newly added profile
+            selectProfileInList(username);
+            document.getElementById('startBtn').disabled = false;
+        }
+
+        function loadProfile(username) {
+            return fetch('/api/profile/load', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username: username })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    showStatus(`Profile "${username}" loaded!`, 'success');
+                    document.getElementById('username').value = username;
+                    
+                    // Update checkboxes based on profile
+                    document.querySelectorAll('input[name="body_parts"]').forEach(checkbox => {
+                        checkbox.checked = data.profile.body_parts[checkbox.value] === 1;
+                    });
+
+                    // mark selected in UI
+                    selectProfileInList(username);
+                    document.getElementById('startBtn').disabled = false;
+                    return data;
+                } else {
+                    showStatus('Error loading profile', 'error');
+                    return data;
+                }
+            })
+            .catch(error => {
+                showStatus('Error loading profile', 'error');
+                return { status: 'error' };
+            });
+        }
+
+        function selectProfileInList(username) {
+            // remove previous selections
+            document.querySelectorAll('li.profile-item').forEach(li => li.classList.remove('selected'));
+            const li = document.querySelector(`li.profile-item[data-username="${username}"]`);
+            if (li) li.classList.add('selected');
+        }
+
+        function startMonitoring() {
+            const username = document.getElementById('username').value.trim();
+            if (!username) {
+                showStatus('Please enter a player name first', 'error');
+                return;
+            }
+
+            // Try to load profile; if it doesn't exist, create it, then redirect
+            loadProfile(username).then(data => {
+                if (data && data.status === 'success') {
+                    window.location.href = '/monitor';
+                } else {
+                    // create profile and then redirect
+                    const bodyParts = getSelectedBodyParts();
+                    fetch('/api/profile/create', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ username: username, body_parts: bodyParts })
+                    })
+                    .then(resp => resp.json())
+                    .then(d => {
+                        if (d.status === 'success') {
+                            showStatus('Profile created and loaded', 'success');
+                            // small delay to ensure backend is ready
+                            setTimeout(() => window.location.href = '/monitor', 700);
+                        } else {
+                            showStatus('Error creating profile before monitoring', 'error');
+                        }
+                    })
+                    .catch(() => showStatus('Error creating profile before monitoring', 'error'));
+                }
+            });
+        }
+
+        // Delete profile UI handler (calls backend endpoint /api/profile/delete)
+        // This is UI-only: if backend endpoint does not exist it will show an error.
+        function deleteProfile(username, event) {
+            // prevent the parent click (which loads the profile)
+            if (event) event.stopPropagation();
+
+            if (!confirm(`Delete profile "${username}"? This action cannot be undone.`)) {
+                return;
+            }
+
+            fetch('/api/profile/delete', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username: username })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    showStatus(`Profile "${username}" deleted`, 'success');
+                    // remove from DOM
+                    const li = document.querySelector(`li.profile-item[data-username="${username}"]`);
+                    if (li) li.remove();
+                } else {
+                    showStatus(data.message || 'Error deleting profile', 'error');
+                }
+            })
+            .catch(err => {
+                showStatus('Error deleting profile (backend endpoint may be missing)', 'error');
+            });
+        }
+
+        // Setup input listeners and initial UI state
+        document.addEventListener('DOMContentLoaded', () => {
+            const usernameInput = document.getElementById('username');
+            const startBtn = document.getElementById('startBtn');
+
+            // enable start button when there's a username
+            usernameInput.addEventListener('input', (e) => {
+                const val = e.target.value.trim();
+                startBtn.disabled = val.length === 0;
+
+                // auto-select a matching profile in the list if present
+                if (val.length > 0) {
+                    const match = document.querySelector(`li.profile-item[data-username=\"${val}\"]`);
+                    if (match) selectProfileInList(val);
+                    else document.querySelectorAll('li.profile-item').forEach(li => li.classList.remove('selected'));
+                } else {
+                    document.querySelectorAll('li.profile-item').forEach(li => li.classList.remove('selected'));
+                }
+            });
+
+            // if there are saved profiles, optionally pre-select the first one
+            const first = document.querySelector('li.profile-item');
+            if (first) {
+                // don't auto-select if username input already filled
+                if (!usernameInput.value.trim()) {
+                    const user = first.getAttribute('data-username');
+                    selectProfileInList(user);
+                    // also set the username input to the first profile's name
+                    usernameInput.value = user;
+                    startBtn.disabled = false;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
